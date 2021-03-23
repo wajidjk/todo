@@ -72,3 +72,40 @@ ol li {
   display: flex;
   color: #8566aa;
 }
+.todo_style {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.todo_style .fa-times {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8566aa;
+  border-radius: 50%;
+  margin: 0 15px 0 35px;
+  color: aliceblue;
+  box-shadow: 5px 5px 15px -5px black;
+}
+.todo_style .fa-times:hover {
+  background-color: red;
+}
+.todo_style .fa-times:hover.list_style {
+  color: red;
+}
+.todo_style .fa-times {
+  margin-left: 0px 15px 0px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  margin-left: 5px;
+  min-height: 40px;
+  width: 40px;
+  color: aliceblue;
+  font-size: 30px;
+}

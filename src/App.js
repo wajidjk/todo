@@ -11,6 +11,17 @@ const App = () => {
       return [...oldItems, inputList];
     });
   };
+
+  const deleteItems = (index) => {
+    console.log(index);
+    console.log("deleted");
+    setItems(
+      Items.filter((el, idx) => {
+        console.log(index, idx);
+        return idx !== index;
+      })
+    );
+  };
   return (
     <>
       <div className="main_div">
@@ -21,8 +32,20 @@ const App = () => {
           <input type="text" placeholder="Add a Items" onChange={itemEvent} />
           <button onClick={listOfItems}>+</button>
           <ol>
-            {Items.map((itemvalue) => {
-              return <li>{itemvalue}</li>;
+            {Items.map((itemvalue, index) => {
+              return (
+                <>
+                  <div className="todo_style">
+                    <i
+                      className="fa fa-times"
+                      onClick={() => {
+                        return deleteItems(index);
+                      }}
+                    />
+                    <li key={index}>{itemvalue}</li>
+                  </div>
+                </>
+              );
             })}
           </ol>
         </div>
