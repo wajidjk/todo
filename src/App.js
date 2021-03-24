@@ -1,4 +1,6 @@
 import React, { useState, useCallback } from "react";
+import { Button } from "@material-ui/core";
+
 const App = () => {
   const [inputList, setInputList] = useState("");
   const [isImportant, setIsImportant] = useState("0");
@@ -38,8 +40,16 @@ const App = () => {
           <br />
           <h1>Todo App</h1>
           <br />
-          <input type="text" placeholder="Add a Items" onChange={itemEvent} />
+          <input
+            style={{ marginRight: "10px" }}
+            className="search"
+            type="text"
+            placeholder="Add a Items"
+            onChange={itemEvent}
+          />
           <select
+            style={{ marginRight: "10px" }}
+            className="search"
             defaultValue={"false"}
             value={isImportant}
             onChange={(e) => {
@@ -50,7 +60,10 @@ const App = () => {
             <option value={"0"}>Not Important </option>
             <option value={"1"}>Important</option>
           </select>
+
           <select
+            style={{ marginRight: "10px" }}
+            className="search"
             defaultValue={"Mohsin"}
             value={name}
             onChange={(e) => {
@@ -58,13 +71,16 @@ const App = () => {
               setName(vall);
             }}
           >
-            <option value={"Mohsin"}>Mohsin</option>
-            <option value={"Ahsan"}>Ahsan</option>
-            <option value={"Hassan"}>Hassan</option>
-            <option value={"Khawar"}>Khawar</option>
-            <option value={"Wajid"}>Wajid</option>
+            <option value={"(Mohsin)"}>Mohsin</option>
+            <option value={"(Ahsan)"}>Ahsan</option>
+            <option value={"(Hassan)"}>Hassan</option>
+            <option value={"(Khawar)"}>Khawar</option>
+            <option value={"(Wajid)"}>Wajid</option>
           </select>
           <button onClick={addItem}>+</button>
+          {/* <Button className="button" color="secondary" onClick={addItem}>
+            +
+          </Button> */}
           <ol>
             {Items.map((itemvalue, index) => {
               return (

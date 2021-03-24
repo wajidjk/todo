@@ -32,18 +32,20 @@ h1 {
   color: aliceblue;
   background: transparent;
   background-color: #8566aa;
-  margin-bottom: 10px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 10px 1px black;
 }
 input {
-  text-align: center;
+  text-align: left;
   height: 30px;
-  top: 10px;
+  top: 30px;
   border: none;
   background: transparent;
-  font-size: 20px;
-  width: 60px;
+  font-size: 30px;
+  width: 50px;
   font-weight: 500;
-  width: 60%;
+  width: 40%;
   border-bottom: 2px solid #8566aa;
   outline: none;
 }
@@ -108,4 +110,8 @@ button {
   width: 40px;
   color: aliceblue;
   font-size: 30px;
+}
+
+.search {
+  color: #8566aa;
 }
