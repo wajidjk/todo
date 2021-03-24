@@ -1,24 +1,25 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 const App = () => {
   const [inputList, setInputList] = useState("");
   const [isImportant, setIsImportant] = useState("0");
   const [Items, setItems] = useState([]);
+  const [name, setName] = useState("Mohsin");
 
   const itemEvent = (event) => {
     setInputList(event.target.value);
   };
   const addItem = useCallback(() => {
-    console.log(isImportant);
     setItems((oldItems) => {
       return [
         ...oldItems,
         {
           title: inputList,
           isImportant: !!parseInt(isImportant),
+          name,
         },
       ];
     });
-  }, [inputList, isImportant]);
+  }, [inputList, isImportant, name]);
 
   const deleteItems = (index) => {
     console.log(index);
@@ -49,6 +50,20 @@ const App = () => {
             <option value={"0"}>Not Important </option>
             <option value={"1"}>Important</option>
           </select>
+          <select
+            defaultValue={"Mohsin"}
+            value={name}
+            onChange={(e) => {
+              let vall = e.target.value;
+              setName(vall);
+            }}
+          >
+            <option value={"Mohsin"}>Mohsin</option>
+            <option value={"Ahsan"}>Ahsan</option>
+            <option value={"Hassan"}>Hassan</option>
+            <option value={"Khawar"}>Khawar</option>
+            <option value={"Wajid"}>Wajid</option>
+          </select>
           <button onClick={addItem}>+</button>
           <ol>
             {Items.map((itemvalue, index) => {
@@ -64,6 +79,7 @@ const App = () => {
                     <li key={index}>
                       {itemvalue.title}{" "}
                       {Boolean(itemvalue.isImportant) ? "important" : ""}
+                      {itemvalue.name}
                     </li>
                   </div>
                 </>
